@@ -5,7 +5,8 @@ import os
 y =pd.read_csv('C:/Users/admin/Desktop/курсовая 2.0/y.txt', sep= '\t')
 y =  y.fillna(0)
 y = y.replace(',','.', regex=True)
-y['Gominy'] = y.loc[:, 'Pahokee peat':'Disser'].sum(axis=1)
+cols = ["Pahokee peat","Nordic aquatic","Suwanee river","Elliot soil","Disser"]
+y = y.eval('Gominy=Pahokee peat+Nordic aquatic', inplace=True)
 print(y)
 fds = sorted(os.listdir('C:/Users/admin/Desktop/курсовая 2.0/X — копия/')) #формируем список файлов для считывания в цикле
 print(fds)
