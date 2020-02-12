@@ -16,12 +16,13 @@ print(fds)
 k = 0
 
 while k < 35:
-    dataset = pd.read_csv('C:/Users/admin/Desktop/курсовая 2.0/X — копия/'+fds[k],sep='\t')
-    dataset = dataset.fillna(0)
-    dataset = dataset.replace(',','.', regex=True) #меняю ',' на '.'
-    dataset = dataset.astype(float) #конвертирую из string в float
+    x = pd.read_csv('C:/Users/admin/Desktop/курсовая 2.0/X — копия/'+fds[k],sep='\t')
+    x = x.fillna(0)
+    x = x.replace(',','.', regex=True) #меняю ',' на '.'
+    x = x.astype(float) #конвертирую из string в float
+    y1=y.iloc[k:k+1,:].values #делю у на строки
     k = k + 1
-print(dataset)
+print(y1)
 print()
 print(k)
 print()
